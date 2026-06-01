@@ -170,7 +170,7 @@ static void temp_layer_activation_work_handler(struct k_work *work) {
     }
 
     // Activate the temp-layer layer
-    int ret = zmk_keymap_layer_activate(data->temp_layer_layer, false);
+    int ret = zmk_keymap_layer_activate(data->temp_layer_layer);
     if (ret == 0) {
         data->temp_layer_layer_active = true;
         LOG_INF("Temp-layer layer %d activated", data->temp_layer_layer);
@@ -189,7 +189,7 @@ static void temp_layer_deactivation_work_handler(struct k_work *work) {
     }
 
     // Deactivate the temp-layer layer
-    int ret = zmk_keymap_layer_deactivate(data->temp_layer_layer, false);
+    int ret = zmk_keymap_layer_deactivate(data->temp_layer_layer);
     if (ret == 0) {
         data->temp_layer_layer_active = false;
         LOG_INF("Temp-layer layer %d deactivated", data->temp_layer_layer);
